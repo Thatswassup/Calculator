@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    background-color: #333;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+.display {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: right;
+    font-size: 36px;
+    min-height: 45px;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.error-message {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    color: red;
+    font-size: 16px;
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+button {
+    flex: 1 0 calc(25% - 15px); /* 25% width minus the gap */
+    padding: 25px;
+    font-size: 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #666;
+    color: white;
+    transition: background-color 0.2s;
+    /* Set min-width to prevent buttons from growing too wide */
+    min-width: 0px;
+    /* Ensure buttons maintain aspect ratio */
+    aspect-ratio: 1;
+    /* Center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make the equals button take up two spaces */
+button.equals {
+    flex: 2 0 calc(50% - 15px); /* 50% width minus the gap */
+    background-color: #34c759;
+    aspect-ratio: 2;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+button.operator {
+    background-color: #ff9500;
+}
+
+button.clear {
+    background-color: #ff3b30;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator {
+        width: 90%;
+        padding: 20px;
+    }
+
+    button {
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    .display {
+        font-size: 32px;
+        padding: 25px;
+    }
+}
